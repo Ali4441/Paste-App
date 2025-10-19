@@ -16,7 +16,7 @@ const Pastes = () => {
   };
 
 
-  const [active, setActive] = useState(true);
+  const [active, setActive] = useState(false);
 
   const handleClick = () => {
     setActive(!active); // toggle true/false
