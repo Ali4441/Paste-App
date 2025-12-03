@@ -9,6 +9,7 @@ import toast from 'react-hot-toast';
 
 import SharePaste from './SharePaste';
 import { NavLink } from 'react-router-dom';
+
 const Button = ({ formattedDate, paste, onDelete, handleClick }) => {
 
   const copyHandle = () => {
@@ -16,48 +17,43 @@ const Button = ({ formattedDate, paste, onDelete, handleClick }) => {
     toast.success("Copy successfull");
   }
 
-
-
   return (
     <div>
-      <div className='flex items-center justify-center
-       gap-2 mb-5'>
+      <div className='flex items-center justify-center gap-1 sm:gap-2 mb-5 flex-wrap'>
         <NavLink to={`/?pasteId=${paste._id}`}>
           <button
-            className='w-8 h-9  text-xl text-white rounded-sm border-[1px] border-zinc-500 flex items-center justify-center hover:text-blue-600'>
+            className='w-7 h-8 sm:w-8 sm:h-9 text-lg sm:text-xl text-white rounded-sm border-[1px] border-zinc-500 flex items-center justify-center hover:text-blue-600'>
             <CiEdit />
-          </button></NavLink>
-
+          </button>
+        </NavLink>
 
         <button onClick={() => onDelete(paste._id)}
-          className='w-8 h-9   text-xl text-white rounded-sm border-[1px] border-zinc-500 flex items-center justify-center hover:text-red-500'>
+          className='w-7 h-8 sm:w-8 sm:h-9 text-lg sm:text-xl text-white rounded-sm border-[1px] border-zinc-500 flex items-center justify-center hover:text-red-500'>
           <RiDeleteBin5Line />
         </button>
 
-        <button
-          onClick={handleClick}
-          className='w-8 h-9 sharebtn  text-xl text-white rounded-sm border-[1px] border-zinc-500 flex items-center justify-center hover:text-yellow-400'>
+        <button onClick={handleClick}
+          className='w-7 h-8 sm:w-8 sm:h-9 text-lg sm:text-xl text-white rounded-sm border-[1px] border-zinc-500 flex items-center justify-center hover:text-yellow-400'>
           <PiUploadSimple />
         </button>
 
         <button
-          className='w-8 h-9   text-xl text-white rounded-sm border-[1px] border-zinc-500 flex items-center justify-center hover:text-blue-300'>
+          className='w-7 h-8 sm:w-8 sm:h-9 text-lg sm:text-xl text-white rounded-sm border-[1px] border-zinc-500 flex items-center justify-center hover:text-blue-300'>
           <GrView />
         </button>
 
         <button onClick={copyHandle}
-          className='w-8 h-9  text-xl text-white rounded-sm border-[1px] border-zinc-500 flex items-center justify-center hover:text-green-400'>
+          className='w-7 h-8 sm:w-8 sm:h-9 text-lg sm:text-xl text-white rounded-sm border-[1px] border-zinc-500 flex items-center justify-center hover:text-green-400'>
           <RxCopy />
         </button>
-
       </div>
-      <div className='flex items-center justify-center flex-row gap-3'>
+
+      <div className='flex items-center justify-center flex-row gap-2 sm:gap-3 text-sm sm:text-base'>
         <SlCalender />
         <span>{formattedDate}</span>
       </div>
-
-
     </div>
   )
 }
+
 export default Button
